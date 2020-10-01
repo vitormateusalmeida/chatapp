@@ -8,6 +8,8 @@ app.get('/', (req, res) => {
 
 var clients = {}
 
+// initialize IO
+
 io.on('connection', (socket) => {
     socket.on('new-client',(userName) => {
         // clients.push(userName);
@@ -34,6 +36,8 @@ io.on('connection', (socket) => {
     });
     
 });
+
+// Define Port
 
 http.listen(3000, () => {
   console.log('listening on *:3000');
